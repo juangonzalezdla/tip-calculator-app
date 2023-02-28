@@ -7,7 +7,6 @@
 
 :root {
   --Strong-cyan: hsl(172, 67%, 45%);
-
   --Very-dark-cyan: hsl(183, 100%, 15%);
   --Dark-grayish-cyan: hsl(186, 14%, 43%);
   --Grayish-cyan: hsl(184, 14%, 56%);
@@ -74,6 +73,17 @@ body {
   border: 3px solid transparent;
   border-radius: 5px;
 }
+.amount__number::before {
+  content: url('/images/icon-dollar.svg');
+  display: inline-block;
+  position: absolute;
+  top: 38px;
+}
+.amount__number:focus {
+  border: 3px solid hsl(172, 67%, 45%);
+  border-radius: 5px;
+  outline: none;
+}
 
 .select__porcentages {
   width: 100%;
@@ -84,7 +94,7 @@ body {
   gap: 10px;
 }
 .select__porcentages__btn {
-  width: 100px;
+  width: 105px;
   background-color: var(--Very-dark-cyan);
   color: var(--White);
   font-family: inherit;
@@ -100,9 +110,12 @@ body {
   background-color: var(--Light-grayish-cyan);
   color: var(--Very-dark-cyan);
 }
+.select__porcentages__btn::after {
+  content: "%";
+}
 
 .btn-custom {
-  width: 100px;
+  width: 105px;
   background-color: var(--Very-light-grayish-cyan);
   color: var(--Very-dark-cyan);
   font-family: inherit;
@@ -113,6 +126,11 @@ body {
   border: none;
   border-radius: 5px;
   cursor:  pointer;
+}
+.btn-custom:focus {
+  border: 3px solid hsl(172, 67%, 45%);
+  border-radius: 5px;
+  outline: none;
 }
 
 .people {
@@ -132,6 +150,11 @@ body {
   padding: 5px;
   border: 3px solid transparent;
   border-radius: 5px;
+}
+.people__number:focus {
+  border: 3px solid hsl(172, 67%, 45%);
+  border-radius: 5px;
+  outline: none;
 }
 
 .right {
