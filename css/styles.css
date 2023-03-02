@@ -19,7 +19,6 @@ body {
   background-color: var(--Light-grayish-cyan);
   font-family: 'Space Mono', monospace;
   font-weight: 700;
-  font-size: 16px;
   color: var(--Dark-grayish-cyan);
 }
 
@@ -72,12 +71,6 @@ body {
   padding: 5px;
   border: 3px solid transparent;
   border-radius: 5px;
-}
-.amount__number::before {
-  content: url('/images/icon-dollar.svg');
-  display: inline-block;
-  position: absolute;
-  top: 38px;
 }
 .amount__number:focus {
   border: 3px solid hsl(172, 67%, 45%);
@@ -157,9 +150,47 @@ body {
   outline: none;
 }
 
+/* Styles on the right side of the calculator */
 .right {
   width: 100%;
   background-color: var(--Very-dark-cyan);
   padding: 30px;
   border-radius: 10px;
+}
+
+.result__tip {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.top {
+  margin-bottom: 40px;
+}
+
+.result__tip__amount, .result__tip__total {
+  color: var(--White);
+}
+
+.result__tip__number {
+  color: var(--Strong-cyan);
+  font-size: 2.5rem;
+}
+
+.btn__reset {
+  width: 100%;
+  margin-top: 100px;
+  background-color: var(--Dark-grayish-cyan);
+  font-family: inherit;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  padding: 10px 0;
+  border: none;
+  border-radius: 5px;
+}
+.btn__reset:hover {
+  cursor: pointer;
+  background-color: var(--Light-grayish-cyan);
 }
