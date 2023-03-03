@@ -62,6 +62,14 @@ body {
 .amount__label, .people__label {
   margin-bottom: 5px;
 }
+.amount__icon--container, .people__icon--container {
+  position: relative;
+}
+.amount__icon, .people__icon {
+  position: absolute;
+  left: 20px;
+  top: 18px;
+}
 .amount__number, .people__number {
   width: 100%;
   background-color: var(--Very-light-grayish-cyan);
