@@ -1,0 +1,25 @@
+@media (max-width: 850px) {
+  .logo--container {
+    margin: 40px 0 30px 0;
+  }
+
+  .calculator {
+    width: 100%;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .select__porcentages {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .right {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .right--container {
+    gap: 20px;
+  }
+}

@@ -20,6 +20,8 @@ body {
   font-family: 'Space Mono', monospace;
   font-weight: 700;
   color: var(--Dark-grayish-cyan);
+  width: 100vw;
+  height: 100%;
 }
 
 .main {
@@ -78,17 +80,19 @@ body {
 }
 
 .select {
+  width: 100%;
   margin: 30px 0;
 }
 .select__porcentages {
   width: 100%;
   margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
+  max-width: 100%;
+  width: 100%;
 }
 .select__porcentages__btn {
-  width: 105px;
   background-color: var(--Very-dark-cyan);
   color: var(--White);
   font-family: inherit;
@@ -109,7 +113,7 @@ body {
 }
 
 .btn-custom {
-  width: 105px;
+  width: 100%;
   background-color: var(--Very-light-grayish-cyan);
   color: var(--Very-dark-cyan);
   font-family: inherit;
@@ -149,7 +153,7 @@ body {
 }
 .result__tip__number {
   color: var(--Strong-cyan);
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .btn__reset {
