@@ -1,5 +1,5 @@
-const InputBill = document.getElementById('bill');
-const InputPeople = document.getElementById('people-number');
+const inputBill = document.getElementById('bill');
+const inputPeople = document.getElementById('people-number');
 const showError = document.querySelector('label span');
 
 const btn5 = document.querySelector('.btn-5');
@@ -17,9 +17,9 @@ let billAmount, peopleNumber, CustomPercent, tipPerson, tipTotal, totalPerson;
 
 /* Reset Functions */
 const resetInputValues = () => {
-  InputBill.value = '';
-  InputPeople.value = '';
-  InputPeople.classList.remove('empty');
+  inputBill.value = '';
+  inputPeople.value = '';
+  inputPeople.classList.remove('empty');
   inputCustom.value = '';
   showError.classList.remove('empty');
 }
@@ -32,3 +32,16 @@ const resetResultValues = () => {
   resultTipAmount.value = '$0.00';
   resultTotal.value = '$0.00';
 }
+
+/* Activate reset button */
+inputBill.addEventListener('change', () => {
+  billAmount = Number(inputBill.value);
+  peopleNumber = Number(inputPeople.value);
+
+  if (billAmount !== 0 && peopleNumber === 0) {
+    btnReset.removeAttribute('disabled');
+
+    inputPeople.classList.add('empty');
+    showError.classList.add('empty');
+  }
+});

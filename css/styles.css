@@ -183,7 +183,6 @@ body {
 
 .btn__reset {
   width: 100%;
-  background-color: var(--Dark-grayish-cyan);
   font-family: inherit;
   text-transform: uppercase;
   font-weight: 700;
@@ -192,6 +191,9 @@ body {
   padding: 10px 0;
   border: none;
   border-radius: 5px;
+}
+.btn__reset:enabled {
+  background-color: var(--Dark-grayish-cyan);
 }
 .btn__reset:enabled:hover {
   cursor: pointer;
