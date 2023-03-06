@@ -28,27 +28,27 @@
           <label class="amount__label" for="bill">Bill</label>
           <div class="amount__icon--container">
             <img class="amount__icon" src="./images/icon-dollar.svg" alt="Icon dollar">
-            <input class="amount__number" id="bill" type="number" placeholder="0">
+            <input class="amount__number" id="bill" placeholder="0">
           </div>
         </div>
 
         <div class="select">
           <label class="select__label">Select Tip %</label>
-          <div class="select__porcentages">
-            <button class="select__porcentages__btn btn-5">5</button>
-            <button class="select__porcentages__btn btn-10">10</button>
-            <button class="select__porcentages__btn btn-15">15</button>
-            <button class="select__porcentages__btn btn-25">25</button>
-            <button class="select__porcentages__btn btn-50">50</button>
-            <input class="btn-custom" type="number" id="custom" placeholder="Custom">
+          <div class="select__percentage">
+            <button class="select__percentage__btn btn-5">5</button>
+            <button class="select__percentage__btn btn-10">10</button>
+            <button class="select__percentage__btn btn-15">15</button>
+            <button class="select__percentage__btn btn-25">25</button>
+            <button class="select__percentage__btn btn-50">50</button>
+            <input class="btn-custom" id="custom" placeholder="Custom">
           </div>
         </div>
 
         <div class="people">
-          <label class="people__label" for="people-number">Number of People</label>
+          <label class="people__label" for="people-number">Number of People <span>Can't be zero</span></label>
           <div class="people__icon--container">
             <img class="people__icon" src="./images/icon-person.svg" alt="Icon person">
-            <input class="people__number" id="people-number" type="number" placeholder="0">
+            <input class="people__number" id="people-number" placeholder="0">
           </div>
         </div>
       </section>
@@ -72,7 +72,7 @@
           </div>
         </div>
 
-        <button class="btn__reset">Reset</button>
+        <button class="btn__reset" disabled>Reset</button>
       </section>
     </div>
   </main>

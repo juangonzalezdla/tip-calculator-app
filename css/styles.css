@@ -58,6 +58,7 @@ body {
 .amount, .people {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .amount__label, .people__label {
   margin-bottom: 5px;
@@ -77,7 +78,7 @@ body {
   font-family: inherit;
   font-size: 1.5rem;
   text-align: right;
-  padding: 5px;
+  padding: 5px 15px;
   border: 3px solid transparent;
   border-radius: 5px;
 }
@@ -87,11 +88,24 @@ body {
   outline: none;
 }
 
+.people__label span {
+  display: none;
+}
+.people__label span.empty {
+  display: inline;
+  color: red;
+  position: absolute;
+  right: 0;
+}
+.people #people-number.empty {
+  border: 3px solid red;
+}
+
 .select {
   width: 100%;
   margin: 30px 0;
 }
-.select__porcentages {
+.select__percentage {
   width: 100%;
   margin-top: 10px;
   display: grid;
@@ -100,7 +114,10 @@ body {
   max-width: 100%;
   width: 100%;
 }
-.select__porcentages__btn {
+.select__percentage button.selected {
+  background-color: var(--Strong-cyan);
+}
+.select__percentage__btn {
   background-color: var(--Very-dark-cyan);
   color: var(--White);
   font-family: inherit;
@@ -112,11 +129,11 @@ body {
   border-radius: 5px;
   cursor:  pointer;
 }
-.select__porcentages__btn:hover {
+.select__percentage__btn:hover {
   background-color: var(--Light-grayish-cyan);
   color: var(--Very-dark-cyan);
 }
-.select__porcentages__btn::after {
+.select__percentage__btn::after {
   content: "%";
 }
 
@@ -126,9 +143,9 @@ body {
   color: var(--Very-dark-cyan);
   font-family: inherit;
   font-weight: 700;
-  font-size: 1.3rem;
-  text-align: center;
-  padding: 5px;
+  font-size: 1.5rem;
+  text-align: right;
+  padding: 5px 10px;
   border: none;
   border-radius: 5px;
   cursor:  pointer;
@@ -176,7 +193,7 @@ body {
   border: none;
   border-radius: 5px;
 }
-.btn__reset:hover {
+.btn__reset:enabled:hover {
   cursor: pointer;
   background-color: var(--Light-grayish-cyan);
 }
