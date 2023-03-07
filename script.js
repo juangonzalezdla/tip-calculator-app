@@ -58,3 +58,22 @@ inputPeople.addEventListener('change', () => {
     showError.classList.add('empty');
   }
 });
+
+/* Select Tip */
+const percentageBtns = [btn5, btn10, btn15, btn25, btn50, inputCustom];
+let percent = 0;
+
+percentageBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    btn.classList.add('selected');
+    percentageBtns.forEach((btnSelected) => {
+      if (btnSelected !== btn) {
+        btnSelected.classList.remove('selected');
+      }
+    });
+    if (btn.id !== 'custom') {
+      percent = Number(btn.innerHTML);
+    }
+  });
+});
+
