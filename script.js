@@ -12,8 +12,10 @@ const inputCustom = document.getElementById('custom');
 const resultTipAmount = document.getElementById('tip-amount');
 const resultTotal = document.getElementById('total');
 const btnReset = document.querySelector('.btn__reset');
+const showTip = document.querySelector('.show-tip');
+const showTotal = document.querySelector('.show-total');
 
-let billAmount, peopleNumber, CustomPercent, tipPerson, tipTotal, totalPerson;
+let billAmount, peopleNumber, CustomPercent, tipAmount, tipPerson, totalPerson;
 
 /* Reset Functions */
 const resetInputValues = () => {
@@ -77,3 +79,33 @@ percentageBtns.forEach((btn) => {
   });
 });
 
+/* Calculate tip and total */
+const inputs = [inputBill, inputPeople, inputCustom];
+
+inputs.forEach((input) => {
+  input.addEventListener('change', () => {
+    billAmount = Number(inputBill.value);
+    peopleNumber = Number(inputPeople.value);
+    CustomPercent = Number(inputCustom.value);
+
+    if (CustomPercent > 100) {
+      alert('Percentage cannot be greater than 100!');
+      resetInputValues();
+    }
+
+    if (percent === 0) {
+      percent = CustomPercent;
+    }
+
+    if (billAmount !== 0 && peopleNumber !== 0 && percent !== 0) {
+      tipAmount = billAmount * (percent / 100);
+      tipPerson = tipAmount / peopleNumber;
+      totalPerson = (billAmount + tipAmount) / peopleNumber;
+
+      showTip.textContent = '$' + tipPerson.toFixed(2);
+      showTotal.textContent = '$' + totalPerson.toFixed(2);
+    }
+  }); 
+});
+
+btnReset.addEventListener('click', resetInputValues, resetPercentageBtns, resetResultValues);
