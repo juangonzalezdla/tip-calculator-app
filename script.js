@@ -45,3 +45,16 @@ inputBill.addEventListener('change', () => {
     showError.classList.add('empty');
   }
 });
+
+/* Validate number of people (!== 0) */
+inputPeople.addEventListener('change', () => {
+  peopleNumber = Number(inputPeople.value);
+
+  if (peopleNumber !== 0) {
+    inputPeople.classList.remove('empty');
+    showError.classList.remove('empty');
+  } else if (peopleNumber === 0) {
+    inputPeople.classList.add('empty');
+    showError.classList.add('empty');
+  }
+});
