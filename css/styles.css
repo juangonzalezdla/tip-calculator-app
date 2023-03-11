@@ -115,7 +115,8 @@ body {
   width: 100%;
 }
 .select__percentage button.selected {
-  background-color: var(--Strong-cyan);
+  background-color: var(--Light-grayish-cyan);
+  color: var(--Very-dark-cyan);
 }
 .select__percentage__btn {
   background-color: var(--Very-dark-cyan);
