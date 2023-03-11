@@ -17,22 +17,20 @@ const showTotal = document.querySelector('.show-total');
 
 let billAmount, peopleNumber, CustomPercent, tipAmount, tipPerson, totalPerson;
 
-/* Reset Functions */
-const resetInputValues = () => {
+/* Reset Function */
+const resetValues = () => {
   inputBill.value = '';
   inputPeople.value = '';
   inputPeople.classList.remove('empty');
   inputCustom.value = '';
   showError.classList.remove('empty');
-}
-const resetPercentageBtns = () => {
+
   percentageBtns.forEach((btn) => {
     btn.classList.remove('selected');
   });
-}
-const resetResultValues = () => {
-  resultTipAmount.value = '$0.00';
-  resultTotal.value = '$0.00';
+
+  showTip.textContent = '$0.00';
+  showTotal.textContent = '$0.00';
 }
 
 /* Activate reset button */
@@ -90,7 +88,7 @@ inputs.forEach((input) => {
 
     if (CustomPercent > 100) {
       alert('Percentage cannot be greater than 100!');
-      resetInputValues();
+      resetValues();
     }
 
     if (percent === 0) {
@@ -108,4 +106,4 @@ inputs.forEach((input) => {
   }); 
 });
 
-btnReset.addEventListener('click', resetInputValues, resetPercentageBtns, resetResultValues);
+btnReset.addEventListener('click', resetValues);
